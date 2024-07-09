@@ -8,8 +8,4 @@ use Illuminate\Database\Eloquent\Model;
 class Player extends Model
 {
     use HasFactory;
-
-    public function Equipment(){
-        return $this->hasMany('App\Models\Post');
-    }
 }

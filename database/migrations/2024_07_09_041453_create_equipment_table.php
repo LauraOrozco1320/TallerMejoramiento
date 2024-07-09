@@ -18,15 +18,8 @@ return new class extends Migration
             $table->int('capacity');
             $table->year('year');
             $table->String('city');
-
-             //Atributos foraneos
-             $table->unsignedBigInteger('player_id')->nullable();
-
-             //Referencia
-             $table->foreign('player_id')
-                ->references('id')
-                ->on('players')->onDelete('set null');
-
+             
+            $table->foreignId('player_id')->on('players')->references('id');
 
             $table->timestamps();
         });
